@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    background-image: url('/js/ProjectImages/sunny.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.week-weather{
+    display: grid;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 0;
+    background-color: #263238;
+    width: 100%;
+    height: 200px;
+    grid-template-columns: repeat(8,1fr);
+}
+
+.todaybtn{
+    grid-column: 1 / span 2;
+}
+
+.week-weather .button{
+    padding: 10px;
+    text-align: center;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    color: white;
+    transform: background-color;
+}
+
+.curDay img{
+    padding: 30px;
+    width: 130px;
+    height: 130px;
+}
+
+.curDay{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.weather-item div{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.weather-item img{
+    width: 70px;
+    height: 70px;
+}
+
+.temp-day{
+    padding-top: 50px;
+    padding-right: 20px;
+    font-size: 30px;
+}
+
+.button:hover{
+    color: black;
+    background-color: #455a64;
+}
+
+.time-date{
+    padding: 100px 0 15px 100px;
+}
+
+.time{
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+.time span{
+    font-size: 25px;
+}
+
+.date{
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.location{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 130px 100px 0 0;
+    color: white;
+}
+
+#curLoc{
+    font-size: 30px;
+}
+
+#inputLoc{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+#inputLoc::placeholder{
+    color: white;
+}
+
+#userLoc{
+    display: flex;
+}
+
+#searchLoc{
+    background-color:#bdbdbd;
+    border: none;
+    margin-left: 5px;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px; 
+}
+
+.cur-weather-condition{
+    width: 250px;
+    background-color: #263238;
+    border: 1px solid white;
+    border-radius: 10px;
+    opacity: 0.8;
+    margin: 10px 0 0 80px;
+    padding: 10px;
+}
+
+.cur-weather-item{
+    color: #cfd8dc;
+    display: flex;
+    justify-content: flex-end;
+    width: 250px;
+}
+
+.cur-weather-item div{
+    padding: 20px;
+}
+
+.cur-weather-item:hover{
+    color: white;
+}
