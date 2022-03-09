@@ -22,7 +22,7 @@ time, mark, audio, video {
 }
 
 body{
-    background-image: url(/sunny.jpg);
+    background-image: url('https://images.unsplash.com/photo-1419833173245-f59e1b93f9ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     font-family: 'Poppins' , sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
