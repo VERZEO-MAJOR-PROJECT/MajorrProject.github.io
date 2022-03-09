@@ -4,76 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <div class="container">
-        <img src="" alt="" id="bgImg">
-        <div class="time-date">
-            <div class="time" id="time">05:30 <span id="am-pm">PM</span></div>
-            <div class="date" id="date">Monday,4 March 2022</div>
-            <script src="index.js"></script>
-        </div>
-        <div class="week-weather">
-            <div class="button todaybtn curDay">
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width="100px">
-                <div class="temp-day">
-                    <div class="day">Today</div><br>
-                    <div class="temp">12&#176;</div>
+        <div class="currentInfo">
+            <div class="time-date">
+                <div class="time" id="time">
+                    9:30 <span id="am-pm">PM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday,5 March 2022
                 </div>
             </div>
-            <div class="button Day1 weather-item">
-                <div class="day">Sunday</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
-                <div class="temp">15&#176;</div>
-            </div>
-            <div class="button Day2 weather-item">
-                <div class="day">Monday</div>
-                <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="">
-                <div class="temp">13&#176;</div>
-            </div>
-            <div class="button Day3 weather-item">
-                <div class="day">Tuesday</div>
-                <img src="http://openweathermap.org/img/wn/09n@2x.png" alt="">
-                <div class="temp">17&#176;</div>
-            </div>
-            <div class="button Day4 weather-item">
-                <div class="day">Wednesday</div>
-                <img src="http://openweathermap.org/img/wn/04n@2x.png" alt="">
-                <div class="temp">15&#176;</div>
-            </div>
-            <div class="button Day5 weather-item">
-                <div class="day">Thursday</div>
-                <img src="http://openweathermap.org/img/wn/03n@2x.png" alt="">
-                <div class="temp">12&#176;</div>
-            </div>
-            <div class="button Day6 weather-item">
-                <div class="day">Friday</div>
-                <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="">
-                <div class="temp">12&#176;</div>
-            </div>
-        </div>
-        <div class="location">
-            <div id="curLoc">Delhi</div>
-            <br>
-            <div id="userLoc">
+            <div class="Location">
+                <div class="time-zone" id="time-zone">Delhi</div>
                 <input type="text" placeholder="Enter your Location" id="inputLoc">
                 <input type="button" value="&#128269;" id="searchLoc">
             </div>
         </div>
-        <div class="cur-weather-condition" id="cur-weather-condition">
-             HUMIDITY    25%
-            <br>
-            <br>
-            TEMPERATURE    45          
-            <br>
-            <br>
-            WIND SPEED   19.2km/j
+
+        
+
+        <div class="forecast" id="forecast">
+            <div class="curForecast" id="curForecast">
+                <img src="" width="100px" alt="">
+                <div class="other">
+                    <div class="day">Monday</div>
+                    <div class="temp">Day - 12&#176;C</div>
+                    <div class="temp">Night - 12&#176;C</div>
+                </div>
+            </div>
+            
+            <div class="futureForecast" id="futureForecast">
+                <div class="futureForecast-item">
+                    <div class="day">Tuesday</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+                <div class="futureForecast-item">
+                    <div class="day">Wednesay</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+                <div class="futureForecast-item">
+                    <div class="day">Thursday</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+                <div class="futureForecast-item">
+                    <div class="day">Friday</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+                <div class="futureForecast-item">
+                    <div class="day">Saturday</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+                <div class="futureForecast-item">
+                    <div class="day">Sunday</div>
+                    <img src="" width="100px" alt="">
+                    <div class="temp">Day - 13&#176;C</div>
+                    <div class="temp">Night - 13&#176;C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="current-weather-condition" id="current-weather-condition">
+            
         </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="test.js"></script>
 </body>
 </html>
