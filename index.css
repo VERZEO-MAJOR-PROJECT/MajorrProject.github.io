@@ -22,7 +22,7 @@ time, mark, audio, video {
 }
 
 body{
-    background-image: url(/js/ProjectImages/sunny.jpg);
+    background-image: url(/sunny.jpg);
     font-family: 'Poppins' , sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
