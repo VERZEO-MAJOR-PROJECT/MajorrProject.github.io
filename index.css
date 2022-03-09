@@ -183,8 +183,3 @@ body{
     
 }
 
-@media only screen and (max-width:705px) {
-    .forecast{
-        visibility: hidden;
-    }
-}
