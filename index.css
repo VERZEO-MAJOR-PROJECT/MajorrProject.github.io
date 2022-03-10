@@ -175,12 +175,11 @@ body{
 }
 
 #searchLoc{
-    /* background-color: #bdbdbd; */
+    background-color: #bdbdbd;
     border: 1px solid black;
     height: 35px;
     width: 40px;
     border-radius: 5px;
-    background-color: transparent;
 }
 
 .locItem{
