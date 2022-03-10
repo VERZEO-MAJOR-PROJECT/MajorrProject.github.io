@@ -75,8 +75,8 @@ function showWeatherdata(data){
         `<img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" width='150px'>
         <div class="other">
             <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
-            <div class="temp">Day - ${day.temp.day}&#176;C</div>
-            <div class="temp">Night - ${day.temp.night}&#176;C</div>
+            <div class="temp">Day - ${Math.round(day.temp.day-273.15)}&#176;C</div>
+            <div class="temp">Night - ${Math.round(day.temp.night-273.15)}&#176;C</div>
 
         </div>`
     }else{
@@ -84,8 +84,8 @@ function showWeatherdata(data){
         `<div class="futureForecast-item">
             <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
             <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Day - ${day.temp.day}&#176;C</div>
-            <div class="temp">Night - ${day.temp.night}&#176;C</div>
+            <div class="temp">Day - ${Math.round(day.temp.day-273.15)}&#176;C</div>
+            <div class="temp">Night - ${Math.round(day.temp.night-273.15)}&#176;C</div>
         </div>
         `
         }
@@ -110,7 +110,8 @@ const getWeather = async(city) =>{
         const{humidity,pressure} = weatherData.main;
         const{speed} = weatherData.wind;
         const{all} = weatherData.clouds;
-        cityGeo(weatherData);
+        // cityGeo(weatherData);
+        bgImg(weatherData);
         curWeatherEls.innerHTML = 
         `
         <div class="weather-item">
@@ -134,15 +135,46 @@ const getWeather = async(city) =>{
     }
     catch(error){
         alert('city not found');
+        curLoc.innerHTML = 'Asia/Kolkata';
     }
     
 }
 
-function cityGeo(weatherData){
-    console.log(weatherData);
-    let{lat,lon} = weatherData.coord;
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${API_KEY}`)
-    .then(res => res.json()).then(city => {
-        console.log(city);
-    })
+// function cityGeo(weatherData){
+//     console.log(weatherData);
+//     let{lat,lon} = weatherData.coord;
+//     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${API_KEY}`)
+//     .then(res => res.json()).then(city => {
+//         console.log(city);
+//     })
+// }
+
+
+function bgImg(data){
+    console.log(data);
+    let{id} = data.weather[0];
+    if((id >= 200) && (id < 300)){
+        document.body.style.backgroundImage = "url('https://eskipaper.com/images/thunderstorm-wallpaper-6.jpg')";
+    }
+    else if((id>=300) && (id < 500)){
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1600415684478-744cf4f8f8d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80')";
+    }
+    else if((id>=500) && (id < 600)){
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1565065524861-0be4646f450b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')";
+    }
+    else if((id >= 600) && (id < 700)){
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')";
+    }
+    else if((id > 700) && (id < 800)){
+        document.body.style.backgroundImage = "url('https://www.wallpaperup.com/uploads/wallpapers/2019/01/11/1307775/9168c2235a6b264b223d5a6ef757ba4d-700.jpg')";
+    }
+    else if(id == 800){
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1419833173245-f59e1b93f9ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')";
+    }
+    else if((id > 800) && (id < 810)){
+        document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/2681522/thumb/1.jpg')";
+    }
+    else{
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536244636800-a3f74db0f3cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=792&q=80')";
+    }
 }
