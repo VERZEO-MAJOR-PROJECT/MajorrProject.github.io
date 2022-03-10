@@ -66,7 +66,7 @@ function showWeatherdata(data){
         <div>${clouds}</div>
     </div>`;
 
-    curLoc.innerHTML = data.timzone;
+    curLoc.innerHTML = data.timezone;
 
     let otherDayForecast = ''
     data.daily.forEach((day,idx) => {
