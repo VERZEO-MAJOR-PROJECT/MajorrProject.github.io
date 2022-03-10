@@ -2,10 +2,13 @@ const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const curLoc = document.getElementById('time-zone');
 const inputLoc = document.getElementById('inputLoc');
+const searchLoc = document.getElementById('searchLoc');
 const curWeatherEls = document.getElementById('current-weather-condition');
 const dayEl = document.getElementsByClassName('day');
 const currentEl = document.getElementById('curForecast');
 const futureForecastEls = document.getElementById('futureForecast');
+const futureItems = document.querySelectorAll('.btn');
+const btn2 = document.getElementById('btn2');
 
 const API_KEY = 'fd8715bbd26c5f06ec357529266147e3';
 
@@ -63,7 +66,7 @@ function showWeatherdata(data){
         <div>${clouds}</div>
     </div>`;
 
-    curLoc.innerHTML = data.timezone;
+    curLoc.innerHTML = data.timzone;
 
     let otherDayForecast = ''
     data.daily.forEach((day,idx) => {
@@ -83,9 +86,63 @@ function showWeatherdata(data){
             <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
             <div class="temp">Day - ${day.temp.day}&#176;C</div>
             <div class="temp">Night - ${day.temp.night}&#176;C</div>
-        </div>`
-    }
+        </div>
+        `
+        }
+    });
+    futureForecastEls.innerHTML = otherDayForecast;
+}
+
+
+searchLoc.addEventListener('click',(e)=>{
+    e.preventDefault();
+    getWeather(inputLoc.value);
+    inputLoc.value = '';
 });
 
-    futureForecastEls.innerHTML = otherDayForecast;
+const getWeather = async(city) =>{
+    try{
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+        const weatherData = await response.json();
+        console.log(weatherData);
+        const{name} = weatherData;
+        curLoc.innerHTML = name;
+        const{humidity,pressure} = weatherData.main;
+        const{speed} = weatherData.wind;
+        const{all} = weatherData.clouds;
+        cityGeo(weatherData);
+        curWeatherEls.innerHTML = 
+        `
+        <div class="weather-item">
+            <div>Humidity</div>
+            <div>${humidity}%</div>
+        </div>
+        <div class="weather-item">
+            <div>Pressure</div>
+            <div>${pressure}</div>
+        </div>
+        <div class="weather-item">
+            <div>Wind Speed</div>
+            <div>${speed} m/s</div>
+        </div>
+        <div class="weather-item">
+            <div>Cloudy</div>
+            <div>${all}</div>
+        </div>
+        `;
+
+    }
+    catch(error){
+        alert('city not found');
+    }
+    
+}
+
+function cityGeo(weatherData){
+    console.log(weatherData);
+    let{lat,lon} = weatherData.coord;
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${API_KEY}`)
+    .then(res => res.json()).then(city => {
+        console.log(city);
+    })
 }
