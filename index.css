@@ -22,7 +22,7 @@ time, mark, audio, video {
 }
 
 body{
-    background-image: url('https://images.unsplash.com/photo-1419833173245-f59e1b93f9ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-image: url(/js/ProjectImages/sunny.jpg);
     font-family: 'Poppins' , sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
@@ -155,7 +155,7 @@ body{
     width: max-content;
     opacity: 0.8;
     border-radius: 10px;
-    margin: 10px 0 0 90px;
+    margin: 10px 0 0 100px;
     padding: 10px;
     width: 200px;
 }
@@ -178,8 +178,11 @@ body{
 
     .forecast{
         justify-content: start;
-        padding-left: 10px;
+        /* padding-left: 10px; */
     }
     
 }
-
+/* 
+@media only screen and (max-width:705px) {
+    
+} */
