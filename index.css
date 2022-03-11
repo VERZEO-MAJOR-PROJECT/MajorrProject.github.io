@@ -84,7 +84,7 @@ body{
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     border: 1px solid white;
     border-radius: 10px;
     width: 110px;
@@ -135,7 +135,7 @@ body{
 }
 
 .time-zone{
-    font-size: 30px;
+    font-size: 40px;
 }
 
 #inputLoc{
@@ -191,17 +191,7 @@ body{
 
     .forecast{
         justify-content: start;
-        /* padding-left: 10px; */
-    }
-    
-    .curForecast{
-        justify-self: start;
-    }
-}
-@media only screen and (max-width:1350px) {
-
-    .forecast{
-        justify-content: start;
+        /* margin-left: 10px; */
     }
     
 }
