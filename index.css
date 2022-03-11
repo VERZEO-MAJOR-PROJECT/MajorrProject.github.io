@@ -87,7 +87,7 @@ body{
     margin-left: 10px;
     border: 1px solid white;
     border-radius: 10px;
-    width: auto;
+    width: 110px;
 }
 
 .futureForecast-item{
@@ -198,10 +198,16 @@ body{
         justify-self: start;
     }
 }
-
-@media only screen and (max-width:400px) and (max-height:800px) {
+@media only screen and (max-width:1350px) {
 
     .forecast{
-        visibility: hidden;
+        justify-content: start;
+    }
+    
+}
+
+@media only screen and (max-width:400px){
+    .curForecast{
+        margin-left: 10px;
     }
 }
