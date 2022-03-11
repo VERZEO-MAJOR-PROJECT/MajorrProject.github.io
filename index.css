@@ -48,7 +48,7 @@ body{
 }
 
 .forecast div{
-    padding: 4px;
+    padding: 10px;
 }
 
 .forecast .curForecast{
@@ -143,6 +143,7 @@ body{
     border: none;
     outline: none;
     border-bottom: 1px solid black;
+    font-size: 20px;
 }
 
 #inputLoc::placeholder{
@@ -155,7 +156,7 @@ body{
     width: max-content;
     opacity: 0.8;
     border-radius: 10px;
-    margin: 5px 0 0 100px;
+    margin: 10px 0 0 100px;
     padding: 10px;
     width: 200px;
 }
@@ -177,8 +178,8 @@ body{
 #searchLoc{
     background-color: #bdbdbd;
     border: 1px solid black;
-    height: 35px;
-    width: 40px;
+    height: 40px;
+    width: 50px;
     border-radius: 5px;
 }
 
@@ -192,8 +193,15 @@ body{
         justify-content: start;
         /* padding-left: 10px; */
     }
-}
-/* 
-@media only screen and (max-width:705px) {
     
-} */
+    .curForecast{
+        justify-self: start;
+    }
+}
+
+@media only screen and (max-width:400px) and (max-height:800px) {
+
+    .forecast{
+        visibility: hidden;
+    }
+}
