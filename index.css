@@ -28,6 +28,7 @@ body{
     background-size: cover;
     overflow: hidden;
     height: 150vh;
+    display: relative;
 }
 
 .container{
