@@ -48,7 +48,7 @@ body{
 }
 
 .forecast div{
-    padding: 10px;
+    padding: 4px;
 }
 
 .forecast .curForecast{
@@ -84,7 +84,7 @@ body{
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 1px solid white;
     border-radius: 10px;
     width: auto;
@@ -135,7 +135,7 @@ body{
 }
 
 .time-zone{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 #inputLoc{
@@ -178,8 +178,8 @@ body{
 #searchLoc{
     background-color: #bdbdbd;
     border: 1px solid black;
-    height: 40px;
-    width: 50px;
+    height: 35px;
+    width: 40px;
     border-radius: 5px;
 }
 
