@@ -87,7 +87,7 @@ body{
     margin-left: 20px;
     border: 1px solid white;
     border-radius: 10px;
-    width: 110px;
+    width: auto;
 }
 
 .futureForecast-item{
