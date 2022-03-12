@@ -28,7 +28,6 @@ body{
     background-size: cover;
     overflow: hidden;
     height: 150vh;
-    display: relative;
 }
 
 .container{
@@ -187,18 +186,22 @@ body{
 .locItem{
     display: flex;
 }
-
-@media only screen and (max-width:1350px) {
+@media only screen and (max-width:1400px) {
 
     .forecast{
         justify-content: start;
-        /* margin-left: 10px; */
+        margin-left: 10px;
+        align-items: none;
+        overflow-x: scroll;
     }
     
 }
 
-@media only screen and (max-width:400px){
-    .curForecast{
-        margin-left: 10px;
+@media only screen and (max-width:800px){
+
+    .forecast{
+        justify-content: start;
+        overflow-y: scroll;
+        align-items: none;
     }
 }
