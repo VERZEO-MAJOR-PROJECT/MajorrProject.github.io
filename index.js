@@ -376,7 +376,7 @@ function cityLoc(data){
     console.log(data);
     let citylatitude = data.lat;
     let citylongitude = data.lon;
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${citylatitude}&lon=${citylongitude}&appid=${API_KEY}`).then(res => res.json()).then(cityData => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${citylatitude}&lon=${citylongitude}&appid=${API_KEY}`).then(res => res.json()).then(cityData => {
         console.log(cityData)
         curLoc.innerHTML = cityData.name.toUpperCase();
     })
