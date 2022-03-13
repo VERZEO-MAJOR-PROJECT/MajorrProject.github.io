@@ -27,7 +27,7 @@ setInterval(() => {
     const adv_mins = minutes < 10 ? '0' + minutes : minutes;
     const ampm = hour >= 12 ? 'PM' : 'AM'
 
-    timeEl.innerHTML = hoursIn12HrFormat + ':' + adv_mins + " " + `<span id="am-pm">${ampm}</span>`;
+    timeEl.innerHTML = (hoursIn12HrFormat < 12 ? ('0'+hoursIn12HrFormat) : hoursIn12HrFormat) + ':' + adv_mins + " " + `<span id="am-pm">${ampm}</span>`;
     dateEl.innerHTML = days[day] + ',' + date + ' ' + months[month] + ' ' + year;
 
 }, 1000);
@@ -42,6 +42,7 @@ function getWeatherData() {
             console.log(data);
             showWeatherdata(data);
             extra(data);
+            cityLoc(data);
         })
     })
 }
@@ -67,7 +68,7 @@ function showWeatherdata(data) {
         <div>${clouds}</div>
     </div>`;
 
-    curLoc.innerHTML = data.timezone;
+    // curLoc.innerHTML = data.timezone;
     tz = data.timezone;
 
     let otherDayForecast = ''
@@ -107,7 +108,7 @@ const getWeather = async (city) => {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
         const weatherData = await response.json();
         const { name } = weatherData;
-        curLoc.innerHTML = name;
+        curLoc.innerHTML = name.toUpperCase();
         const { humidity, pressure } = weatherData.main;
         const { speed } = weatherData.wind;
         const { all } = weatherData.clouds;
@@ -186,7 +187,7 @@ function extra(data) {
     data.daily.forEach((day, idx) => {
         if (idx == 0) {
             currentEl.innerHTML =
-                `<img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" width='150px'>
+                `<img src="http://openweathermap.org/img/wn//${data.current.weather[0].icon}@4x.png" width='150px'>
         <div class="other">
             <div class="day">${window.moment(day.dt * 1000).format('dddd')}</div>
             <div class="temp">Day - ${Math.round(day.temp.day - 273.15)}&#176;C</div>
@@ -368,4 +369,16 @@ function extra(data) {
                         </div>`;
     })
 
+}
+
+
+function cityLoc(data){
+    console.log(data);
+    let citylatitude = data.lat;
+    let citylongitude = data.lon;
+    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${citylatitude}&lon=${citylongitude}&appid=${API_KEY}`).then(res => res.json()).then(cityData => {
+        console.log(cityData)
+        curLoc.innerHTML = cityData.name.toUpperCase();
+    })
+    
 }
