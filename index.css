@@ -17,8 +17,8 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	/* font: inherit;
+	vertical-align: baseline; */
 }
 
 body{
@@ -27,11 +27,11 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    height: 100vh;
-    display: relative;
+    height: 150vh;
 }
 
 .container{
+    /* padding: 50px 70px; */
     color: white;
 }
 
@@ -48,7 +48,7 @@ body{
 }
 
 .forecast div{
-    padding: 10px;
+    padding: 4px;
 }
 
 .forecast .curForecast{
@@ -67,13 +67,13 @@ body{
 }
 
 .curForecast .day{
-    font-size: 30px;
+    font-size: 25px;
     padding: 0 20px 10px 20px;
     align-items: center;
 }
 
 .curForecast .temp{
-    font-size: 20px;
+    font-size: 15px;
     padding: 0 20px 10px 20px;
 }
 
@@ -84,30 +84,21 @@ body{
     flex-direction: column;
     padding-left: 20px;
     padding-right: 20px;
-    margin: 5px;
+    margin-left: 10px;
     border: 1px solid white;
     border-radius: 10px;
-    width: 110px;
+    width: auto;
 }
 
 .futureForecast-item{
     height: auto;
     width: 100%;
     color: white;
-    /* font-size: 20px; */
 }
 
 .futureForecast-item:hover{
     color: black;
     background-color: #455a64;
-}
-
-.futureForecast .day{
-    font-size: 20px;
-}
-
-.futureForecast .temp{
-    font-size: 15px;
 }
 
 .curForecast:hover{
@@ -125,7 +116,7 @@ body{
 }
 
 .date{
-    font-weight: 400;
+    font-weight: 200;
     font-size: 20px;
 }
 
@@ -134,19 +125,17 @@ body{
 }
 
 .Location{
-    padding: 60px 50px 15px 100px;
+    padding: 50px 50px 15px 100px;
 }
 
 .currentInfo{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
 }
 
 .time-zone{
-    font-size: 33px;
-    font-weight: 500;
+    font-size: 30px;
 }
 
 #inputLoc{
@@ -154,12 +143,11 @@ body{
     border: none;
     outline: none;
     border-bottom: 1px solid black;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 #inputLoc::placeholder{
     color: white;
-    font-size: 17px;
 }
 
 .current-weather-condition{
@@ -168,7 +156,7 @@ body{
     width: max-content;
     opacity: 0.8;
     border-radius: 10px;
-    margin: 10px 0 0 100px;
+    margin: 5px 0 0 100px;
     padding: 10px;
     width: 200px;
 }
@@ -190,7 +178,7 @@ body{
 #searchLoc{
     background-color: #bdbdbd;
     border: 1px solid black;
-    height: 30px;
+    height: 35px;
     width: 40px;
     border-radius: 5px;
 }
@@ -199,104 +187,20 @@ body{
     display: flex;
 }
 
-@media only screen and (max-width:1400px) {
+@media only screen and (max-width:1350px) {
 
     .forecast{
         justify-content: start;
         /* margin-left: 10px; */
-        align-items: none;
-        overflow-x: scroll;
-    }
-    .curForecast{
-        margin-left: 10px;
     }
     
-}
-
-@media only screen and (max-width:800px){
-
-    .forecast{
-        justify-content: start;
-        overflow-y: scroll;
-        align-items: none;
-        /* font-size: 17px; */
-    }
-
-    .futureForecast-item{
-        /* width: 110px; */
-        font-size: 17px;
-    }
-
-    .curForecast .day{
-        font-size: 25px;
-    }
-    
-    .curForecast .temp{
-        font-size: 15px;
-    }
-    
-    .futureForecast .day{
-        font-size: 18px;
-    }
-    
-    .futureForecast .temp{
-        font-size: 13px;
-    }
-
-    .time-zone{
-        font-size: 25px;
-    }
-
-    #inputLoc{
-        font-size: 15px;
-    }
-
 }
 
 @media only screen and (max-width:700px){
-    .time-date{
-        padding: 50px 50px 0 90px;
+    .curForecast{
+        margin-left: 10px;
     }
 
-    .Location{
-        padding: 20px 50px 10px 90px;
-    }
-
-    .current-weather-condition{
-        margin: 10px 50px 0 90px;
-    }
-    .time{
-        font-size: 2rem;
-    }
-    .time span{
-        font-size: 1rem;
-    }
-    .date{
-        font-size: 1rem;
-    }
-    .time-zone{
-        font-size: 1.5rem;
-    }
-    #inputLoc{
-        font-size: 1rem;
-    }
-    .curForecast img{
-        width: 7rem;   
-    }
-    .curForecast .day{
-        font-size: 1.5rem;
-    }
-    .curForecast .temp{
-        font-size: 0.9rem;
-    }
-    .futureForecast img{
-        width: 6rem;   
-    }
-    .futureForecast .day{
-        font-size: 1.2rem;
-    }
-
-    .weather-item div{
-        font-size: 0.7rem;
-    }
 }
+
+
